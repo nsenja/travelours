@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '/HomePage.dart';
 
 void main() {
   runApp(LoginApp());
@@ -6,18 +7,18 @@ void main() {
 
 class LoginApp extends StatelessWidget {
   @override
+  final HomePage _homePage = HomePage(); // Buat objek TaskList
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Login',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.grey,
-      ),
-      // home: LoginPage(),
-       initialRoute: '/login',
+      ),     
+      initialRoute: '/login',
       routes: {
         '/login': (context) => LoginPage(),
-        '/home': (context) => HomePage(),
+        '/home': (context) => HomePage(),              
       },
     );
   }
@@ -38,27 +39,30 @@ class LoginPage extends StatelessWidget {
             children: [
               Image.asset(
                 'assets/logo.png',
-                width: 100,
-                height: 100,
+                width: 150,
+                height: 150,
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 10),
               Text(
-                'Travelours',
-                style: TextStyle(fontSize: 24),
+                'TRAVELOURS',
+                style: TextStyle(fontSize: 23,            
+                )
               ),
               SizedBox(height: 20),
               TextField(
-                controller: usernameController,
+                // controller: usernameController,
                 decoration: InputDecoration(
                   labelText: 'Username',
+                  hintText: 'Enter your username'
                 ),
               ),
               SizedBox(height: 10),
               TextField(
-                controller: passwordController,
+                // controller: passwordController,
                 obscureText: true,
                 decoration: InputDecoration(
                   labelText: 'Password',
+                   hintText: 'Enter your password'
                 ),
               ),
               SizedBox(height: 20),
@@ -70,11 +74,14 @@ class LoginPage extends StatelessWidget {
 
                   // print('Username: $username');
                   // print('Password: $password');
-                  Navigator.pushReplacementNamed(context, '/home'); // '/home' adalah rute untuk halaman home
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => HomePage()),
+                  );
                 },
-                child: Text('Login'),
+                child: Text('SIGN IN'),
                 style: OutlinedButton.styleFrom(
-                  primary: Colors.black, // Warna teks dan border tombol                
+                  primary: Colors.black, // Warna teks dan border tombol
                   backgroundColor: Colors.blue,
                   fixedSize: Size(400, 50),
                   padding: EdgeInsets.all(16),
@@ -83,20 +90,6 @@ class LoginPage extends StatelessWidget {
             ],
           ),
         ),
-      ),
-    );
-  }
-}
-
-class HomePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Home'),
-      ),
-      body: Center(
-        child: Text('Selamat datang di halaman Home!'),
       ),
     );
   }
