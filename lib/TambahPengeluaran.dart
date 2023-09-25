@@ -56,6 +56,14 @@ class _TambahPengeluaranState extends State<TambahPengeluaran> {
         padding: EdgeInsets.all(16.0),
         child: Column(
           children: [
+              Text(
+              'Tambah Pengeluaran',
+              style: TextStyle(
+                color: Colors.red,
+                fontSize: 18.0,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
             TextFormField(
               controller: _tanggalController,
               decoration: InputDecoration(labelText: 'Tanggal'),
@@ -71,19 +79,32 @@ class _TambahPengeluaranState extends State<TambahPengeluaran> {
               decoration: InputDecoration(labelText: 'Keterangan'),
             ),
             SizedBox(height: 16.0),
-            Row(
+             Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 ElevatedButton(
                   onPressed: _resetForm,
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.orange, // Warna latar belakang oranye
+                  ),
                   child: Text('Reset'),
                 ),
                 ElevatedButton(
                   onPressed: _simpanPengeluaran,
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.green, // Warna latar belakang hijau
+                  ),
                   child: Text('Simpan'),
                 ),
+                ElevatedButton(
+                  onPressed: _simpanPengeluaran,
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.blue, // Warna latar belakang biru
+                  ),
+                  child: Text('<<< Kembali'),
+                ),
               ],
-            ),
+            )
           ],
         ),
       ),

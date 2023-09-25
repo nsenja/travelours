@@ -10,8 +10,8 @@ class Setting extends StatefulWidget {
 class _PengaturanState extends State<Setting> {
   TextEditingController _passwordController = TextEditingController();
   TextEditingController _passwordBaruController = TextEditingController();
-  String _nama = 'Nama Anda'; // Ganti dengan nama Anda
-  String _nim = 'NIM Anda'; // Ganti dengan NIM Anda
+  String _nama = 'Nabila Senja'; // Ganti dengan nama Anda
+  String _nim = '1941720134'; // Ganti dengan NIM Anda
   String _passwordSaatIni = 'password'; // Ganti dengan password saat ini
 
   bool _isPasswordSaatIniBenar = true; // Untuk memeriksa apakah password saat ini benar
@@ -28,7 +28,7 @@ class _PengaturanState extends State<Setting> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             CircleAvatar(
-              backgroundImage: AssetImage('assets/your_photo.jpg'), // Ganti dengan path foto Anda
+              backgroundImage: AssetImage('assets/logo.png'), // Ganti dengan path foto Anda
               radius: 50.0,
             ),
             SizedBox(height: 10.0),
