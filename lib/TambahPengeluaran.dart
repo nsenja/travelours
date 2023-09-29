@@ -82,24 +82,30 @@ class _TambahPengeluaranState extends State<TambahPengeluaran> {
              Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                ElevatedButton(
+                 ElevatedButton(
                   onPressed: _resetForm,
                   style: ElevatedButton.styleFrom(
                     primary: Colors.orange, // Warna latar belakang oranye
                   ),
                   child: Text('Reset'),
                 ),
+                  SizedBox(height: 16.0),
                 ElevatedButton(
-                  onPressed: _simpanPengeluaran,
+                  onPressed:() {
+                     Navigator.pop(context);
+                  },                
                   style: ElevatedButton.styleFrom(
                     primary: Colors.green, // Warna latar belakang hijau
                   ),
                   child: Text('Simpan'),
                 ),
+                  SizedBox(height: 16.0),
                 ElevatedButton(
-                  onPressed: _simpanPengeluaran,
+                  onPressed: (){
+                     Navigator.pop(context);
+                  },
                   style: ElevatedButton.styleFrom(
-                    primary: Colors.blue, // Warna latar belakang biru
+                    primary: Colors.blue,                   
                   ),
                   child: Text('<<< Kembali'),
                 ),

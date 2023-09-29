@@ -10,11 +10,12 @@ class Setting extends StatefulWidget {
 class _PengaturanState extends State<Setting> {
   TextEditingController _passwordController = TextEditingController();
   TextEditingController _passwordBaruController = TextEditingController();
-  String _nama = 'Nabila Senja'; // Ganti dengan nama Anda
-  String _nim = '1941720134'; // Ganti dengan NIM Anda
+  // String _nama = 'Nabila Senja'; // Ganti dengan nama Anda
+  // String _nim = '1941720134'; // Ganti dengan NIM Anda
   String _passwordSaatIni = 'password'; // Ganti dengan password saat ini
 
-  bool _isPasswordSaatIniBenar = true; // Untuk memeriksa apakah password saat ini benar
+  bool _isPasswordSaatIniBenar =
+      true; // Untuk memeriksa apakah password saat ini benar
 
   @override
   Widget build(BuildContext context) {
@@ -25,15 +26,18 @@ class _PengaturanState extends State<Setting> {
       body: Padding(
         padding: EdgeInsets.all(16.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            CircleAvatar(
-              backgroundImage: AssetImage('assets/logo.png'), // Ganti dengan path foto Anda
-              radius: 50.0,
+          children: [
+            SizedBox(
+              height: 10.0,
             ),
-            SizedBox(height: 10.0),
-            Text(_nama),
-            Text(_nim),
+            Text(
+              'Ganti Password',
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 18.0,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
             SizedBox(height: 20.0),
             TextFormField(
               controller: _passwordController,
@@ -49,28 +53,40 @@ class _PengaturanState extends State<Setting> {
             SizedBox(height: 20.0),
             ElevatedButton(
               onPressed: () {
-                // Periksa apakah password saat ini benar
-                if (_passwordController.text == _passwordSaatIni) {
-                  setState(() {
-                    _isPasswordSaatIniBenar = true;
-                  });
-
-                  // Simpan password baru
-                  _passwordSaatIni = _passwordBaruController.text;
-                  _passwordBaruController.clear();
-                } else {
-                  setState(() {
-                    _isPasswordSaatIniBenar = false;
-                  });
-                }
+                Navigator.pop(context);
               },
-              child: Text('Simpan Password Baru'),
-            ),
-            if (!_isPasswordSaatIniBenar)
-              Text(
-                'Password saat ini tidak benar.',
-                style: TextStyle(color: Colors.red),
+              style: ElevatedButton.styleFrom(
+                primary: Colors.green, // Warna latar belakang hijau
               ),
+              child: Text('Simpan'),
+            ),
+            SizedBox(height: 16.0),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              style: ElevatedButton.styleFrom(
+                primary: Colors.blue,
+              ),
+              child: Text('<<< Kembali'),
+            ),
+            SizedBox(
+              height: 120.0,
+            ),
+            Image.asset(
+              'assets/logo.png',
+              width: 250.0, // Sesuaikan lebar sesuai kebutuhan Anda
+              height: 200.0, // Sesuaikan tinggi sesuai kebutuhan Anda
+            ),
+            Text(
+              'Nabila Senja',
+              style: TextStyle(
+                color: Colors.blue,
+                fontSize: 18.0,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            Text('1941720134'),
           ],
         ),
       ),

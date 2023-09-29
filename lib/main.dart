@@ -33,7 +33,7 @@ class LoginPage extends StatelessWidget {
     return Scaffold(
       body: Container(
         child: Padding(
-          padding: EdgeInsets.all(16.0),
+          padding: EdgeInsets.all(13.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -48,7 +48,7 @@ class LoginPage extends StatelessWidget {
                 style: TextStyle(fontSize: 23,            
                 )
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 10),
               TextField(
                 // controller: usernameController,
                 decoration: InputDecoration(
@@ -65,7 +65,7 @@ class LoginPage extends StatelessWidget {
                    hintText: 'Enter your password'
                 ),
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 10),
               ElevatedButton(
                 onPressed: () {
                   //auth

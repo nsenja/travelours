@@ -80,6 +80,8 @@ class _TambahPemasukanState extends State<TambahPemasukan> {
               decoration: InputDecoration(labelText: 'Keterangan'),
             ),
             SizedBox(height: 16.0),
+            Padding(padding: EdgeInsets.all(12.0),
+            child:
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -90,21 +92,28 @@ class _TambahPemasukanState extends State<TambahPemasukan> {
                   ),
                   child: Text('Reset'),
                 ),
+                  SizedBox(height: 16.0),
                 ElevatedButton(
-                  onPressed: _simpanPemasukan,
+                  onPressed:() {
+                     Navigator.pop(context);
+                  },                
                   style: ElevatedButton.styleFrom(
                     primary: Colors.green, // Warna latar belakang hijau
                   ),
                   child: Text('Simpan'),
                 ),
+                  SizedBox(height: 16.0),
                 ElevatedButton(
-                  onPressed: _simpanPemasukan,
+                  onPressed: (){
+                     Navigator.pop(context);
+                  },
                   style: ElevatedButton.styleFrom(
-                    primary: Colors.blue, // Warna latar belakang biru
+                    primary: Colors.blue,                   
                   ),
                   child: Text('<<< Kembali'),
                 ),
               ],
+            )
             )
           ],
         ),

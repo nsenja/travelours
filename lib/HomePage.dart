@@ -23,11 +23,11 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               Text(
-                'Pengeluaran: Rp.1.000.000',
+                'Pengeluaran: Rp.1.000',
                 style: TextStyle(fontSize: 18.0),
               ),
               Text(
-                'Pemasukan: Rp 2.000.000',
+                'Pemasukan: Rp 2.000',
                 style: TextStyle(fontSize: 18.0),
               ),
               Container(
@@ -63,10 +63,10 @@ class HomePage extends StatelessWidget {
                             imageAsset: 'assets/cashFlow.png',
                             label: 'Detail Cash Flow',
                             onTap: () {
-                              //    Navigator.push(
-                              //   context,
-                              //   MaterialPageRoute(builder: (context) => DetailCash()),
-                              // );
+                                 Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => DetailCash()),
+                              );
                             },
                           ),
 
